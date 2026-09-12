@@ -51,5 +51,13 @@ def embed():
 
     return render_template("wlcm.html", name=name,friends=friends ,header=header)
 
+@app.route("/reuse")
+def templating_inheritannce():
+    return render_template("layout.html")
+
+@app.route("/contact")
+def templating():
+    return render_template("contact.html")
+
 if __name__=="__main__":
     app.run(debug=True)
