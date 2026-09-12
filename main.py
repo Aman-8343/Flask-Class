@@ -21,7 +21,7 @@ def handle_login():
         print(request.form)
         name=request.form["username"]
         password=request.form["password"]
-        return f"<p>welcome {name}!</p>"
+        return f"<p>welcome {name}! your pass is {password}</p>"
         #return "<p>post request</p>"
     if request.method=="GET":
         return "<p>get request</p>"
