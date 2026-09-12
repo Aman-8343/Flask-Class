@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, jsonify
 
 app = Flask(__name__)    #static_folder="assets"
 
@@ -8,6 +8,15 @@ def hello_world():
     query=request.args.get("q",default="infinix")
     print(query)
     return render_template("index.html",query=query)
+
+#api with json
+@app.route("/me")
+def me_api():
+    data= {
+        "username": "aman",
+        "theme": "kdfls"
+    }
+    return jsonify(data),404
 
 @app.route("/aski")
 def hello():
