@@ -43,5 +43,13 @@ def login():
 #     return "<p>this is used to handle the form</p>"
 
 
+@app.route("/jinja")
+def embed():
+    header="<header>ABC web<header>"
+    name="aman"
+    friends=["adam","bob","chalie"]
+
+    return render_template("wlcm.html", name=name,friends=friends ,header=header)
+
 if __name__=="__main__":
     app.run(debug=True)
